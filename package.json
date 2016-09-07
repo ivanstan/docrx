@@ -1,0 +1,31 @@
+{
+  "name": "docrx",
+  "version": "1.0.0",
+  "description": "JQuery extension for rendering rich markup documents",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-clean-css": "*",
+    "gulp-concat": "*",
+    "gulp-minify": "0.0.14",
+    "gulp-remote-src": "github:ivanstan/gulp-remote-src",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "^1.6.0",
+    "merge2": "^1.0.2"
+  },
+  "scripts": {
+    "install": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivanstan/docrx"
+  },
+  "author": "Ivan Stanojevic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivanstan/docrx/issues"
+  },
+  "homepage": "https://github.com/ivanstan/docrx"
+}
