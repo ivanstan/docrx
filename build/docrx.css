@@ -264,3 +264,7 @@ div.mermaidTooltip {
 
 code {
   padding: 15px; }
+
+#MathJax_Message {
+  display: none;
+  visibility: hidden; }

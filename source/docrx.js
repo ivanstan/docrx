@@ -1,8 +1,6 @@
 (function($) {
 
-    var element;
-
-    function render(data) {
+    function render(data, element) {
         // handle markdown
         element.html(marked(data));
 
@@ -16,7 +14,7 @@
 
         // hanlde charts
         $('.zing-chart').each((index, element) => {
-            let chart = $(element);
+            let chart = $(element),
             id = 'zing-chart-' + index,
                 options = {
                     id  : id,
@@ -45,18 +43,20 @@
             $('head').append(s);
         }
 
-        element = this;
-        let url = this.data('url');
+        this.each(function(){
+            var element = $(this),
+                url = element.data('url');
 
-        if(url == 'undefined') {
-            render();
-            return this;
-        }
+            if(url == 'undefined') {
+                render(element.html(), this);
+                return this;
+            }
 
-        $.get(url, (data) => {
-            this.append(data);
-            render(data);
-            return this;
+            $.get(url, (data) => {
+                element.append(data);
+                render(data, element);
+                return this;
+            });
         });
     }
 
